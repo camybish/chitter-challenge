@@ -21,7 +21,7 @@ STRAIGHT UP
 
 As a Maker
 So that I can let people know what I am doing  
-I want to post a message (peep) to chitter
+I want to post a message (peep) to chitter 
 
 As a maker
 So that I can see what others are saying  
@@ -51,6 +51,11 @@ As a Maker
 So that I can stay constantly tapped in to the shouty box of Chitter
 I want to receive an email if I am tagged in a Peep
 ```
+
+BASIC --> Post a 'peep', 'Peeps' shown newest first (with time), Sign Up 
+HARDER --> Login and logout to own account 
+ADVANCED --> Email if tagged in a 'peep'
+
 
 Technical Approach:
 -----
