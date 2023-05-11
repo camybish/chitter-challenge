@@ -5,7 +5,6 @@ require 'user_repository'
 describe UserRepository do
   before(:each) do 
     reset_users_table
-    reset_peeps_table
   end
 
   it 'login matches the required login' do # don't worry about this until the basic tests are done
@@ -31,6 +30,16 @@ describe UserRepository do
     expect(camy.username).to eq "camybish"
     expect(camy.name).to eq "Cameron Bishop"
     expect(camy.email).to eq "camybish@piesize.co.uk"
+  end
+
+  it 'checks for the admin using the all method' do 
+    repo = UserRepository.new
+
+    admin = repo.all
+
+    expect(admin.first.username).to eq "Admin"
+    expect(admin.first.name).to eq "Ed Minn"
+    expect(admin.first.email).to eq "EdMinn@email.com"
   end
 end
 

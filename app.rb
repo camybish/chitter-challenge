@@ -12,22 +12,24 @@ class Application < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  def reset_web_table
-    seed_sql = File.read('chitter_table.sql')
-    connection = PG.connect
-    connection.exec(seed_sql)
-  end
+  # def reset_web_table
+  #   seed_sql = File.read('chitter_table.sql')
+  #   connection = PG.connect
+  #   connection.exec(seed_sql)
+  # end
 
-  before(:each) do 
-    reset_web_table
-  end
+  # before(:each) do 
+  #   reset_web_table
+  # end
 
   get '/' do 
     repo = PeepRepository.new
     user = UserRepository.new
-    @peeps = repo.all
+    @peep = repo.all
     # @user_id = @peeps.each { |ids| ids.user_id }
-    # @user = user.all
+    @user = user.all
+    p @peep 
+    p @user
     return erb(:homepage)
   end
 
@@ -39,8 +41,7 @@ class Application < Sinatra::Base
     user = UserRepository.new
     @username = params[:username]
     @password = params[:password]
-    return erb(:login_success)
-
+    return erb(:login_sucess)
   end
 
   get '/comingsoon' do

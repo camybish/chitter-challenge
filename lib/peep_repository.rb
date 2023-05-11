@@ -8,14 +8,12 @@ class PeepRepository
 
     result_set.each do |record|
       peep = Peep.new
-      peep.id = record['id'].to_i
+      peep.id = record['id']
       peep.time = record['time']
       peep.content = record['content']
       peep.user_id = record['user_id']
-
       peeps << peep
     end
-
     return peeps
   end
     
