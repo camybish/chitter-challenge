@@ -41,3 +41,7 @@ Get the localhost version of the website set up **framework done**
     - the repos will need find, all, create methods for the logins and the peeps (+ METHODS)
 - THEN you can get into the web implimentation (APP)
 - finally you use render to get it all online
+
+Spec Notes
+- If you're thinking of adding something, describe it in the spec first
+- Start out just testing the you have certain items in the repository

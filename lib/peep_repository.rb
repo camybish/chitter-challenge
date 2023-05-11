@@ -1,6 +1,6 @@
 require_relative 'peep'
 
-class PeepRepo
+class PeepRepository
   def all
     peeps = []
     sql = 'SELECT id, time, content, user_id FROM peeps;'
@@ -10,8 +10,8 @@ class PeepRepo
       peep = Peep.new
       peep.id = record['id'].to_i
       peep.time = record['time']
-      peep.content = record['name']
-      peep.user_id = record['genre']
+      peep.content = record['content']
+      peep.user_id = record['user_id']
 
       peeps << peep
     end
@@ -33,8 +33,8 @@ class PeepRepo
   end
     
   def create(peep)
-    sql = 'INSERT INTO peeps (id, time, content, user_id) VALUES ($1, $2, $3, $4);'
-    sql_params = peep.id, peep.time, peep.content, peep.user_id
+    sql = 'INSERT INTO peeps (time, content, user_id) VALUES ($1, $2, $3, $4);'
+    sql_params = peep.time, peep.content, peep.user_id
     result_set = DatabaseConnection.exec_params(sql, sql_params)
 
     return peep

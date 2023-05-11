@@ -20,6 +20,10 @@ class Application < Sinatra::Base
     reset_web_table
   end
 
+  get '/' do 
+    return erb(:homepage)
+  end
+
   get '/comingsoon' do
     return "<h1>Coming soon: CHITTER, it's shitter than twitter</h1>"
   end 

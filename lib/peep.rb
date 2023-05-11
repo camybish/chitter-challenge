@@ -1,3 +1,3 @@
-class User
-  attr_accessor :time, :content, :user_id
+class Peep
+  attr_accessor :id, :time, :content, :user_id
 end
