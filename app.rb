@@ -2,6 +2,8 @@
 require 'sinatra'
 require "sinatra/reloader"
 require_relative 'lib/database_connection'
+require_relative 'lib/user_repository'
+require_relative 'lib/peep_repository'
 
 DatabaseConnection.connect
 
@@ -21,7 +23,24 @@ class Application < Sinatra::Base
   end
 
   get '/' do 
+    repo = PeepRepository.new
+    user = UserRepository.new
+    @peeps = repo.all
+    # @user_id = @peeps.each { |ids| ids.user_id }
+    # @user = user.all
     return erb(:homepage)
+  end
+
+  get '/login' do 
+    return erb(:login)
+  end
+
+  post '/login' do 
+    user = UserRepository.new
+    @username = params[:username]
+    @password = params[:password]
+    return erb(:login_success)
+
   end
 
   get '/comingsoon' do

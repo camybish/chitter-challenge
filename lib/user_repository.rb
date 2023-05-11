@@ -9,7 +9,7 @@ class UserRepository
     result_set.each do |record|
 
       user = User.new
-      user.id = record['id'].to_i
+      user.id = record['id']
       user.username = record['username']
       user.name = record['name']
       user.email = record['email']

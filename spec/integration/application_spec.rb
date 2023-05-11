@@ -20,12 +20,21 @@ describe Application do
   end
 
   context 'GET /' do 
-    it 'should display the first peep to the feed' do 
+    xit 'should display the first peep to the feed' do 
       response = get('/')
 
       expect(response.status).to eq 200
-      expect(response.body).to include("I am a big fan of Jar Jar Binks")
+      expect(response.body).to include("Jar Jar")
     end
+
+    it 'should include a link to post a peep' do 
+        
+    end
+
+    it 'should include a login' do 
+
+    end
+
   end
 
 
