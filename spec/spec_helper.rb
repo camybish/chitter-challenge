@@ -23,6 +23,12 @@ def reset_users_table
   connection.exec(seed_sql)
 end
 
+def reset_both_tables
+  seed_sql = File.read('spec/seeds/seeds_both.sql')
+  connection = DatabaseConnection.connect
+  connection.exec(seed_sql)
+end
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts

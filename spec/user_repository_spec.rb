@@ -4,7 +4,7 @@ require 'user_repository'
 
 describe UserRepository do
   before(:each) do 
-    reset_users_table
+    reset_both_tables
   end
 
   it 'login matches the required login' do # don't worry about this until the basic tests are done
