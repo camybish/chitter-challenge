@@ -7,13 +7,22 @@
 
       Welcome to chitter <br>
       FEED </h2>
-      <p style="border-width:3px; 
+      <!--<p style="border-width:3px; 
         border-style:solid; 
         background-color:#ffcce0; 
         border-color:#ff0066; 
         width:5%;
         padding: 1em;">
         <button onclick="window.location.href='/login';">Login</button>
+        </p>-->
+      
+        <p style="border-width:3px; 
+        border-style:solid; 
+        background-color:#ffcce0; 
+        border-color:#ff0066; 
+        width:5%;
+        padding: 1em;">
+        <button onclick="window.location.href='/peep';">Post a peep</button>
         </p>
 
     <div>
@@ -25,11 +34,12 @@
       border-color:#ff0066; 
       width:75%;
       padding: 1em;">
+      <% @user %>
       <% @peeps.each do |peep| %>
+      <%= peep.user_id %> <br>
       <%= peep.content %> <br>
       <%= peep.time %> <br>
       <% end %>
-      <% @user.each { |user| user.user_id } %> 
       </p>
 
 

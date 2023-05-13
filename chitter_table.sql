@@ -7,7 +7,6 @@ CREATE TABLE users (
 );
 
 CREATE TABLE peeps (
-    id SERIAL PRIMARY KEY,
     time text, 
     content text, 
     user_id int,

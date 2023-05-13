@@ -25,12 +25,15 @@ class Application < Sinatra::Base
   get '/' do 
     repo = PeepRepository.new
     user = UserRepository.new
-    @peep = repo.all
+    @peeps = repo.all
     # @user_id = @peeps.each { |ids| ids.user_id }
-    @user = user.all
-    p @peep 
+
     p @user
     return erb(:homepage)
+  end
+
+  get '/peep' do 
+    return "<p> Feature coming soon! </p>"
   end
 
   get '/login' do 
