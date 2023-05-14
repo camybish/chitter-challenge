@@ -4,7 +4,7 @@ require 'peep_repository'
 
 describe PeepRepository do
   before(:each) do 
-    reset_peeps_table
+    reset_both_tables
   end
 
   it 'shows the first peep' do

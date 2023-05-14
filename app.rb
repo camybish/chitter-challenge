@@ -23,12 +23,13 @@ class Application < Sinatra::Base
   # end
 
   get '/' do 
-    repo = PeepRepository.new
+    peep = PeepRepository.new
     user = UserRepository.new
-    @peeps = repo.all
+    @peeps = peep.all
     # @user_id = @peeps.each { |ids| ids.user_id }
-
-    p @user
+    @arr = peep.each { |id| id.id }
+    p @arr
+    @peep_handle = user.find(@arr)
     return erb(:homepage)
   end
 

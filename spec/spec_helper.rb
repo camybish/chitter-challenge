@@ -29,6 +29,18 @@ def reset_both_tables
   connection.exec(seed_sql)
 end
 
+def recreate_tables
+  seed_sql = File.read('chitter_table.sql')
+  connection = DatabaseConnection.connect
+  connection.exec(seed_sql)
+end
+
+def delete_tables
+  seed_sql = File.read('delete_table.sql')
+  connection = DatabaseConnection.connect
+  connection.exec(seed_sql)
+end
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts

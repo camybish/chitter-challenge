@@ -12,6 +12,10 @@ describe Application do
   # class so our tests work.
   let(:app) { Application.new }
 
+  # before (:each) do 
+  #   reset_both_tables
+  # end
+
   context 'GET /' do 
     it 'should display the first peep to the feed' do 
       response = get('/')

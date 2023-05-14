@@ -1,0 +1,2 @@
+DROP TABLE peeps;
+DROP TABLE users;

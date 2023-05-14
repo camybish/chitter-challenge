@@ -34,7 +34,7 @@
       border-color:#ff0066; 
       width:75%;
       padding: 1em;">
-      <% @user %>
+      <% @peep_handle.each { |username| username.username } %>
       <% @peeps.each do |peep| %>
       <%= peep.user_id %> <br>
       <%= peep.content %> <br>
